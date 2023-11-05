@@ -9,6 +9,7 @@
 </head>
 <body>
 	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 		#width-toggle:checked ~ .lg-container, #width-toggle:checked ~ nav,
 		#width-toggle:checked ~ footer {
 			width: 100%;
@@ -16,11 +17,11 @@
 	</style>
 	<nav class="header" style="margin: 10px auto 20px auto;">
 		<div class="main-content" style="display: flex; align-items: center;">
-			<a href="/" data-logo><img src="/static/images/mst-avatar.webp" width="36" alt="MystieHum avatar"></a>
+			<a href="/" data-logo><img src="/static/images/mst-avatar.webp" width="36" height="36" alt="MystieHum avatar"></a>
 			<div class="nav-links" style="display: flex;">
 				<a href="/assets.html" id="assets-link">Assets</a>
 				<a href="/feedback.html" id="feedback-link">Feedback</a>
-				<a href="https://mystie.bearblog.dev" title="https://mystie.bearblog.dev">Blog<i class="ri-arrow-right-up-line"></i></a>
+				<a href="https://mystie.bearblog.dev" title="https://mystie.bearblog.dev" target="_blank">Blog<i class="ri-arrow-right-up-line"></i></a>
 			</div>
 		</div>
 		<div class="theme-switcher">
@@ -30,26 +31,6 @@
 	<div class="lg-container" style="margin: 10px auto;">
 		<div class="content">
 			<h2>List of experiments:</h2>
-			<h3>Customizing layout</h3>
-			<h4>Description</h4>
-			<p>This is a thing that lets you customize website layout with checkboxes. Try it out!</p>
-			<details>
-				<summary><b>Try it</b></summary>
-				<!-- checkboxes start -->
-				<input type="checkbox" data-container="lgContainer" id="1" class="width-toggle">
-				<label for="1">Toggle full width for <code>.lg-container</code></label>
-				<br>
-				<input type="checkbox" data-container="header" id="2" class="width-toggle">
-				<label for="2">Toggle full width for <code>.header</code></label>
-				<br>
-				<input type="checkbox" data-container="footer" id="3" class="width-toggle">
-				<label for="3">Toggle full width for <code>footer</code></label>
-				<!-- checkboxes end -->
-			</details>
-			<h4>Bugs</h4>
-			<ul>
-				<li style="margin-left: 15px;">Checkboxes sometimes get checked after reloading the page</li>
-			</ul>
 			<h3>Custom CSS</h3>
 			<h4>Description</h4>
 			<p>This lets you apply custom CSS using customized <code>&lt;style&gt;</code> element.<br>Note: CSS applies immediately</p>
@@ -60,13 +41,48 @@
 			</details>
 			<h4>Bugs</h4>
 			<ul>
+				<li style="margin-left: 15px;">Doesn't work properly on mobile devices</li>
+			</ul>
+			<h3>A <code>&lt;dialog&gt;</code> modal</h3>
+			<h4>Description</h4>
+			<p>A <code>&lt;dialog&gt;</code> modal with HTML & JavaScript</p>
+			<details>
+				<summary><b>Try it</b></summary>
+				<dialog>
+					<div style="display: flex; align-items: center; justify-content: space-between;">
+						<h3>Settings</h3>
+						<button autofocus><i class="ri-close-line"></i> Close</button>
+					</div>
+					<br>
+					<input type="checkbox" data-container="lgContainer" id="1" class="width-toggle">
+					<label for="1">Toggle full width for <code>.lg-container</code></label>
+					<br>
+					<input type="checkbox" data-container="header" id="2" class="width-toggle">
+					<label for="2">Toggle full width for <code>.header</code></label>
+					<br>
+					<input type="checkbox" data-container="footer" id="3" class="width-toggle">
+					<label for="3">Toggle full width for <code>footer</code></label>
+					<br>
+					<input type="checkbox" id="fontChange">
+					<label for="fontChange">Use Inter instead of sans-serif for text font</label>
+					<br>
+					<p style="font-size: 12px;">This loads Inter from <a style="font-size: 12px;" href="https://fonts.google.com" target="_blank">Google Fonts</a>, instead of loading it from <code>fonts</code> folder, so load time will be slower</p>
+					<input type="checkbox" id="fontHeaderChange">
+					<label for="fontHeaderChange">Use sans-serif instead of DM Sans for header font</label>
+					<br><br>
+					<p style="text-align: center;">Settings are applied automatically</p>
+				</dialog>
+				<button>Show the dialog</button>
+			</details>
+			<h4>Bugs</h4>
+			<ul>
 				<li style="margin-left: 15px;">None?</li>
 			</ul>
 		</div>
 	</div>
 	<footer style="margin: 10px auto;">
 		<p>Made by <a href="https://wetdry.world/@mystie">MystieHum</a> in 2023, open-source on <a href="https://github.com/MystieHum/web">GitHub</a>, hosted on <a href="https://heliohost.org">HelioHost</a>. Fonts used: <a href="https://fonts.google.com/specimen/DM+Sans">DM Sans</a>, sans-serif</p>
-		<p>You are currently on the <b class="dark-only">dark</b><b class="light-only">light</b> side <a href="javascript:toggleTheme()">(switch?)</p>
+		<p>You are currently on the <b class="dark-only">dark</b><b class="light-only">light</b> side <a href="javascript:toggleTheme()">(switch?)</a></p>
 	</footer>
 	<script src="/static/scripts/theme.min.js"></script>
 	<script>
@@ -82,7 +98,7 @@
 		for (const containerName in containers) {
 			const storedWidth = localStorage.getItem(`${containerName}-width`);
 			const container = containers[containerName];
-			if (storedWidth) {
+			if (storedWidth === '100%') {
 				container.style.width = storedWidth;
 				checkboxes.forEach((checkbox) => {
 					if (checkbox.getAttribute('data-container') === containerName) {
@@ -106,7 +122,81 @@
 				}
 			});
 		});
+	</script>
+	<script>
+		const dialog = document.querySelector("dialog");
+		const showButton = document.querySelector("dialog + button");
+		const closeButton = document.querySelector("dialog button");
 
+		// "Show the dialog" button opens the dialog modally
+		showButton.addEventListener("click", () => {
+			dialog.showModal();
+		});
+
+		// "Close" button closes the dialog
+		closeButton.addEventListener("click", () => {
+			dialog.close();
+		});
+	</script>
+	<script>
+		const fontCheckbox = document.querySelector('#fontChange');
+		fontCheckbox.addEventListener('change', function() {
+			const elements = document.querySelectorAll('p, a, button, li, label, textarea, style[contenteditable]');
+			elements.forEach(function(element) {
+				element.classList.toggle('inter');
+			});
+
+		  // Set localStorage value
+			if (fontCheckbox.checked) {
+				localStorage.setItem('font', 'inter');
+			} else {
+				localStorage.setItem('font', 'default');
+			}
+		});
+
+		// Check localStorage value on page load
+		window.addEventListener('DOMContentLoaded', function() {
+			const fontValue = localStorage.getItem('font');
+			if (fontValue === 'inter') {
+				fontCheckbox.checked = true;
+				const elements = document.querySelectorAll('p, a, button, li, label, textarea, style[contenteditable]');
+				elements.forEach(function(element) {
+					element.classList.toggle('inter');
+				});
+			} else {
+				fontCheckbox.checked = false;
+			}
+		});
+	</script>
+	<script>
+		const fontHeaderCheckbox = document.querySelector('#fontHeaderChange');
+		fontHeaderCheckbox.addEventListener('change', function() {
+			const elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+			elements.forEach(function(element) {
+				element.classList.toggle('sans-serif');
+			});
+
+		  // Set localStorage value
+			if (fontHeaderCheckbox.checked) {
+				localStorage.setItem('font-header', 'sans-serif');
+			} else {
+				localStorage.setItem('font-header', 'default');
+			}
+		});
+
+		// Check localStorage value on page load
+		window.addEventListener('DOMContentLoaded', function() {
+			const fontHeaderValue = localStorage.getItem('font-header');
+			if (fontHeaderValue === 'sans-serif') {
+				fontHeaderCheckbox.checked = true;
+				const elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+				elements.forEach(function(element) {
+					element.classList.toggle('sans-serif');
+				});
+			} else {
+				fontHeaderCheckbox.checked = false;
+			}
+		});
 	</script>
 </body>
 </html>

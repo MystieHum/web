@@ -1,5 +1,9 @@
 const root = document.documentElement;
 
+if (root.classList == '') {
+	root.classList.add('dark');
+}
+
 function toggleTheme() {
 	const currentTheme = root.classList.contains('dark') ? 'dark' : 'light';
 	const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
