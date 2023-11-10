@@ -146,7 +146,7 @@
 	--mst-input-bg: #333;
 	--mst-input-border-color: #555;
 }
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
 	:root {
 		--mst-bg: #eaeaea;
 		--mst-warn-bg: #ffd9b3;
@@ -162,7 +162,7 @@
 		--mst-input-bg: #ddd;
 		--mst-input-border-color: #bbb;
 	}
-}
+}*/
 :root.light {
 	--mst-bg: #eaeaea;
 	--mst-warn-bg: #ffd9b3;
