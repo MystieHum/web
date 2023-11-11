@@ -30,7 +30,7 @@ function changeGiscusTheme() {
 	});
 }
 
-const themeToggle = document.getElementById('theme-toggle');
+const themeToggle = document.querySelector('.theme-toggle');
 if (themeToggle) {
 	themeToggle.addEventListener('click', toggleTheme);
 }

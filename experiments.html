@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="theme-switcher">
-			<button id="theme-toggle"><i class="ri-palette-line"></i> Theme</button>
+			<button class="theme-toggle"><i class="ri-palette-line"></i> Theme</button>
 		</div>
 	</nav>
 	<div class="lg-container" style="margin: 10px auto;">
@@ -54,22 +54,31 @@
 						<button autofocus><i class="ri-close-line"></i> Close</button>
 					</div>
 					<br>
-					<input type="checkbox" data-container="lgContainer" id="1" class="width-toggle">
-					<label for="1">Toggle full width for <code>.lg-container</code></label>
+					<h4>Width</h4>
+					<label for="1">
+						<input type="checkbox" data-container="lgContainer" id="1" class="width-toggle">
+						Toggle full width for <code>.lg-container</code>
+					</label>
+					<label for="2">
+						<input type="checkbox" data-container="header" id="2" class="width-toggle">
+						Toggle full width for <code>.header</code>
+					</label>
+					<label for="3">
+						<input type="checkbox" data-container="footer" id="3" class="width-toggle">
+						Toggle full width for <code>footer</code>
+					</label>
+					<offtop class="mobile" style="font-size: 14px;">This will not work for mobile devices, because the width is forced to 95% here</offtop>
+					<h4>Font</h4>
+					<!--label for="fontChange">
+						<input type="checkbox" id="fontChange">
+						Use Inter instead of sans-serif for text font
+					</label>
+					<p style="font-size: 12px;">This loads Inter from <a style="font-size: 12px;" href="https://fonts.google.com" target="_blank">Google Fonts</a>, instead of loading it from <code>fonts</code> folder, so load time will be slower</p-->
+					<label for="fontHeaderChange">
+						<input type="checkbox" id="fontHeaderChange">
+						Use sans-serif instead of DM Sans for header font
+					</label>
 					<br>
-					<input type="checkbox" data-container="header" id="2" class="width-toggle">
-					<label for="2">Toggle full width for <code>.header</code></label>
-					<br>
-					<input type="checkbox" data-container="footer" id="3" class="width-toggle">
-					<label for="3">Toggle full width for <code>footer</code></label>
-					<br>
-					<input type="checkbox" id="fontChange">
-					<label for="fontChange">Use Inter instead of sans-serif for text font</label>
-					<br>
-					<p style="font-size: 12px;">This loads Inter from <a style="font-size: 12px;" href="https://fonts.google.com" target="_blank">Google Fonts</a>, instead of loading it from <code>fonts</code> folder, so load time will be slower</p>
-					<input type="checkbox" id="fontHeaderChange">
-					<label for="fontHeaderChange">Use sans-serif instead of DM Sans for header font</label>
-					<br><br>
 					<p style="text-align: center;">Settings are applied automatically</p>
 				</dialog>
 				<button>Show the dialog</button>
@@ -139,7 +148,7 @@
 		});
 	</script>
 	<script>
-		const fontCheckbox = document.querySelector('#fontChange');
+		/*const fontCheckbox = document.querySelector('#fontChange');
 		fontCheckbox.addEventListener('change', function() {
 			const elements = document.querySelectorAll('p, a, button, li, label, textarea, style[contenteditable]');
 			elements.forEach(function(element) {
@@ -166,7 +175,7 @@
 			} else {
 				fontCheckbox.checked = false;
 			}
-		});
+		});*/
 	</script>
 	<script>
 		const fontHeaderCheckbox = document.querySelector('#fontHeaderChange');
