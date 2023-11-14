@@ -287,7 +287,7 @@ a, a:visited {
 }
 a, a:hover, .h-cont a, .h-cont a:hover, button:hover, button,
 .button, .button:hover {
-	transition: .2s;
+	transition: .2s !important;
 }
 a:hover {
 	text-decoration-color: var(--mst-a-color);
@@ -309,6 +309,9 @@ offtop {
 	margin-left: 5px;
 	visibility: hidden;
 	transition: visibility 0s linear 0.3s;
+}
+.h-cont a::before {
+	content: '#';
 }
 .h-cont:hover a {
 	visibility: visible;
