@@ -24,9 +24,7 @@
 				<a href="https://mystie.bearblog.dev" title="https://mystie.bearblog.dev" target="_blank">Blog<i class="ri-arrow-right-up-line"></i></a>
 			</div>
 		</div>
-		<div class="theme-switcher">
-			<button class="theme-toggle"><i class="ri-palette-line"></i> Theme</button>
-		</div>
+		<a href="javascript:toggleTheme()"><i class="ri-palette-line"></i> Theme</a>
 	</nav>
 	<div class="lg-container" style="margin: 10px auto;">
 		<div class="content">
@@ -46,43 +44,35 @@
 			<h3>A <code>&lt;dialog&gt;</code> modal</h3>
 			<h4>Description</h4>
 			<p>A <code>&lt;dialog&gt;</code> modal with HTML & JavaScript</p>
-			<details>
-				<summary><b>Try it</b></summary>
-				<dialog>
-					<div style="display: flex; align-items: center; justify-content: space-between;">
-						<h3>Settings</h3>
-						<button autofocus><i class="ri-close-line"></i> Close</button>
-					</div>
-					<br>
-					<h4>Width</h4>
-					<label for="1">
-						<input type="checkbox" data-container="lgContainer" id="1" class="width-toggle">
-						Toggle full width for <code>.lg-container</code>
-					</label>
-					<label for="2">
-						<input type="checkbox" data-container="header" id="2" class="width-toggle">
-						Toggle full width for <code>.header</code>
-					</label>
-					<label for="3">
-						<input type="checkbox" data-container="footer" id="3" class="width-toggle">
-						Toggle full width for <code>footer</code>
-					</label>
-					<offtop class="mobile" style="font-size: 14px;">This will not work for mobile devices, because the width is forced to 95% here</offtop>
-					<h4>Font</h4>
-					<!--label for="fontChange">
-						<input type="checkbox" id="fontChange">
-						Use Inter instead of sans-serif for text font
-					</label>
-					<p style="font-size: 12px;">This loads Inter from <a style="font-size: 12px;" href="https://fonts.google.com" target="_blank">Google Fonts</a>, instead of loading it from <code>fonts</code> folder, so load time will be slower</p-->
-					<label for="fontHeaderChange">
-						<input type="checkbox" id="fontHeaderChange">
-						Use sans-serif instead of DM Sans for header font
-					</label>
-					<br>
-					<p style="text-align: center;">Settings are applied automatically</p>
-				</dialog>
-				<button>Show the dialog</button>
-			</details>
+			<dialog>
+				<div style="display: flex; align-items: center; justify-content: space-between;">
+					<h3>Settings</h3>
+					<button autofocus><i class="ri-close-line"></i> Close</button>
+				</div>
+				<br>
+				<h4>Width</h4>
+				<label for="1">
+					<input type="checkbox" data-container="lgContainer" id="1" class="width-toggle">
+					Toggle full width for <code>.lg-container</code>
+				</label>
+				<label for="2">
+					<input type="checkbox" data-container="header" id="2" class="width-toggle">
+					Toggle full width for <code>.header</code>
+				</label>
+				<label for="3">
+					<input type="checkbox" data-container="footer" id="3" class="width-toggle">
+					Toggle full width for <code>footer</code>
+				</label>
+				<offtop class="mobile" style="font-size: 14px;">This will not work for mobile devices, because the width is forced to 95% here</offtop>
+				<h4>Font</h4>
+				<label for="fontHeaderChange">
+					<input type="checkbox" id="fontHeaderChange">
+					Use sans-serif instead of DM Sans for header font
+				</label>
+				<br>
+				<p style="text-align: center;">Settings are applied automatically</p>
+			</dialog>
+			<button>Show the dialog</button>
 			<h4>Bugs</h4>
 			<ul>
 				<li style="margin-left: 15px;">None?</li>
@@ -90,7 +80,7 @@
 		</div>
 	</div>
 	<footer style="margin: 10px auto;">
-		<p>Made by <a href="https://wetdry.world/@mystie">MystieHum</a> in 2023, open-source on <a href="https://github.com/MystieHum/web">GitHub</a>, hosted on <a href="https://heliohost.org">HelioHost</a>. Fonts used: <a href="https://fonts.google.com/specimen/DM+Sans">DM Sans</a>, sans-serif</p>
+		<p>Made by <a href="https://wetdry.world/@mystie">MystieHum</a> in 2023, open-source on <a href="https://github.com/MystieHum/web">GitHub</a>, hosted on <a href="https://heliohost.org">HelioHost</a>. Fonts used: <a href="https://fonts.google.com/specimen/Inter">Inter</a>, <a href="https://fonts.google.com/specimen/DM+Sans">DM Sans</a></p>
 		<p>You are currently on the <b class="dark-only">dark</b><b class="light-only">light</b> side <a href="javascript:toggleTheme()">(switch?)</a></p>
 	</footer>
 	<script src="/static/scripts/theme.min.js"></script>

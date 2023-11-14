@@ -30,10 +30,10 @@ function changeGiscusTheme() {
 	});
 }
 
-const themeToggle = document.querySelector('.theme-toggle');
-if (themeToggle) {
+const themeToggle = document.querySelector(".header > a:nth-child(2)");
+/*if (themeToggle) {
 	themeToggle.addEventListener('click', toggleTheme);
-}
+}*/
 
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {

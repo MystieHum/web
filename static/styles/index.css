@@ -140,6 +140,16 @@
   src: url('/static/fonts/inter-v13-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* inter-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/static/fonts/inter-v13-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
 /* inter-600 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -202,6 +212,9 @@ html {
 body {
 	font-family: 'Inter', sans-serif;
 	background: var(--mst-bg);
+}
+body, dialog, textarea, style[contenteditable],
+.h-cont a, input {
 	color: var(--mst-color);
 }
 p, a, button, li, textarea, style[contenteditable], summary { font-size: 14px; }
@@ -220,7 +233,6 @@ summary {
 }
 dialog {
 	background: var(--mst-container-bg);
-	color: var(--mst-color);
 	margin: auto;
 	max-width: 60%;
 	border: 1px solid var(--mst-input-border-color);
@@ -235,7 +247,7 @@ dialog::backdrop {
     opacity: 0.65;
     background: #1a1a1a;
 }
-.button {
+.button, .header a, footer a, footer a:hover {
 	text-decoration: none;
 }
 /*.warn-btn:hover {
@@ -248,11 +260,10 @@ button:hover, .button:hover {
 	background: var(--mst-header-hover-link-bg);
 }
 button:active, .button:active {
-	background: var(--mst-header-active-link-bg);
+	background: var(--mst-header-active-link-bg) !important;
 }
 textarea, style[contenteditable] {
 	background: var(--mst-input-bg);
-	color: var(--mst-color);
 	border: 2px solid transparent;
 	border-radius: 5px;
 	padding: 10px;
@@ -280,6 +291,7 @@ a, a:hover, .h-cont a, .h-cont a:hover, button:hover, button,
 }
 a:hover {
 	text-decoration-color: var(--mst-a-color);
+	text-shadow: 0px 0px 30px var(--mst-a-color);
 }
 offtop {
 	opacity: 0.5;
@@ -297,7 +309,6 @@ offtop {
 	margin-left: 5px;
 	visibility: hidden;
 	transition: visibility 0s linear 0.3s;
-	color: var(--mst-color);
 }
 .h-cont:hover a {
 	visibility: visible;
@@ -336,13 +347,11 @@ offtop {
 }
 .header a, button, .button {
 	padding: 7px;
+	font-weight: 500;
 }
-.header a {
-	text-decoration: none;
-}
-.header a, .header a:hover, .header a:active {
+/*.header a, .header a:hover, .header a:active {
 	transition: .1s;
-}
+}*/
 .header a[data-logo] {
 	padding: 0;
 	margin: 0;
@@ -353,11 +362,18 @@ offtop {
 }
 body#home a#home-link,
 body#feedback a#feedback-link,
-body#assets a#assets-link, .header a:hover {
+body#assets a#assets-link, .header a:hover,
+.button:hover, button:hover {
 	background: var(--mst-header-hover-link-bg);
+	/*box-shadow: 0px 0px 30px 2px var(--mst-header-hover-link-bg);*/
+	text-shadow: 0px 0px 30px var(--mst-a-color);
 }
 .header a:active {
 	background: var(--mst-header-active-link-bg);
+}
+.header a:active, .button:active, button:active {
+	/*box-shadow: 0px 0px 30px 2px var(--mst-header-active-link-bg);*/
+	text-shadow: 0px 0px 30px var(--mst-a-color);
 }
 .no-decor {
 	text-decoration: none !important;
@@ -372,7 +388,6 @@ body#assets a#assets-link, .header a:hover {
 	font-family: sans-serif;
 }
 footer a, footer a:hover {
-	text-decoration: none;
 	color: var(--mst-color) !important;
 }
 footer a {
