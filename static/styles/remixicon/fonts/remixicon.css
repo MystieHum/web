@@ -49,3 +49,7 @@
 .ri-arrow-left-line:before { content: "\ea60"; }
 .ri-close-line:before { content: "\eb99"; }
 .ri-check-line:before { content: "\eb7b"; }
+.ri-save-2-line:before { content: "\f0af"; }
+.ri-eraser-line:before { content: "\ec9f"; }
+.ri-delete-bin-line:before { content: "\ec2a"; }
+.ri-add-line:before { content: "\ea13"; }

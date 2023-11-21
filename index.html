@@ -5,13 +5,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/static/styles/index.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/static/styles/remixicon/fonts/remixicon.min.css">
+	<meta name="theme-color" content="#7984ff">
+	<meta name="twitter:card" content="summary">
+	<meta name="og:title" content="MystieHum's website">
+	<meta name="og:type" content="website">
+	<meta name="og:url" content="https://mystie.is-a.dev/">
+	<meta name="og:image" content="/static/images/mst-avatar.webp">
+	<meta name="og:site_name" content="MystieHum's website">
+	<meta name="og:locale" content="en_US">
+	<meta name="og:description" content="A 14-year-old developer roaming around the Internet.">
 	<title>MystieHum</title>
 </head>
 <body id="home">
     <div style="display: none;"><a rel="me" class="none" href="https://wetdry.world/@mystie">Mastodon</a></div>
 	<nav class="header" style="margin: 10px auto 20px auto;">
 		<div class="main-content" style="display: flex; align-items: center;">
-			<a href="/" data-logo><img src="/static/images/mst-avatar.webp" width="36" height="36" alt="MystieHum avatar"></a>
+			<a href="/" data-logo><img id="home-link" src="/static/images/mst-avatar.webp" width="36" height="36" alt="MystieHum avatar"></a>
 			<div class="nav-links" style="display: flex;">
 				<a href="/assets.html" id="assets-link">Assets</a>
 				<a href="/feedback.html" id="feedback-link">Feedback</a>
@@ -40,9 +49,9 @@
 				<a href="#about-me"></a>
 			</div>
 			<p>I'm MystieHum, a 14-year-old developer that likes Glitch Hop music, developing websites and flashing devices.<br>
-				Favorite track: <a href='https://yewtu.be/watch?v=11EHCcMqIgw' target='_blank'>DVRST - Motion</a><br>
+				Favorite track: <a href='https://youtu.be/watch?v=11EHCcMqIgw' target='_blank'>DVRST - Motion</a><br>
 				Playlist on YouTube Music: <a href='https://music.youtube.com/playlist?list=PLglFzT7e0p-SCFG3JNdctW-7_Z8k23qrh' target='_blank'>MusicdasH</a><br>
-				Main device: <a href='https://www.gsmarena.com/xiaomi_redmi_6a-9217.php' target='_blank'>Xiaomi Redmi 6A</a>
+				Main device: <a href='https://www.gsmarena.com/xiaomi_redmi_6a-9217.php' target='_blank'>Xiaomi Redmi 6A</a><br>
 			</p>
 			<div class="h-cont">
 				<h2 id="expr">Want experimental stuff?</h2>
@@ -67,10 +76,11 @@
 	<div class="lg-container" style="margin: 10px auto;">
 		<div class="content">
 			<div class="h-cont">
-				<h2 id="contact">Where to find me:</h2>
+				<h2 id="contact">Contact me:</h2>
 				<a href="#contact"></a>
 			</div>
 			<ul class="icon-links">
+				<h4>Preferred</h4>
 				<li>
 					<img loading="lazy" src="/static/images/masto.svg" width="16" title="Mastodon" alt="Mastodon logo">
 					<a href="https://wetdry.world/@mystie" target="_blank">@mystie@wetdry.world</a>
@@ -78,6 +88,7 @@
 				<li>
 					<img loading="lazy" src="/static/images/xmpp-logo.svg" width="16" title="XMPP" alt="XMPP logo"><a href="xmpp:mystie@macaw.me">mystie@macaw.me</a>
 				</li>
+				<h4>Okay</h4>
 				<li>
 					<img loading="lazy" src="/static/images/dc.svg" width="16" title="Discord" alt="Discord logo">
 					<a href="https://discord.com/users/658287767490527243" target="_blank">mystiedev</a>
@@ -86,32 +97,28 @@
 					<img loading="lazy" class="light-invert" src="/static/images/gh.svg" width="16" title="GitHub" alt="GitHub logo">
 					<a href="https://github.com/MystieHum">MystieHum</a>
 				</li>
+				<h4>Won't respond/inactive</h4>
+				<li>
+					<img loading="lazy" src="/static/images/yt.webp" width="16" title="YouTube" alt="YouTube logo">
+					<a href="https://www.youtube.com/@MystieHum">MystieHum</a>
+				</li>
 				<li>
 					<img loading="lazy" src="/static/images/tg.svg" width="16" title="Telegram" alt="Telegram logo">
 					<a href="https://telegram.dog/MystieHum">MystieHum</a>
 				</li>
 				<li>
-					<img loading="lazy" src="/static/images/yt.webp" width="16" title="YouTube" alt="YouTube logo">
-					<a href="https://www.youtube.com/@MystieHum">MystieHum</a>
+					<img loading="lazy" class="dark-invert" src="/static/images/matrix.svg" width="16" title="Matrix" alt="Matrix logo">
+					<a href="https://matrix.to/#/@mystie:tchncs.de">@mystie:tchncs.de</a>
+				</li>
+				<li>
+					<img loading="lazy" class="light-invert" src="/static/images/email.png" width="16" title="Email" alt="Mail icon">
+					<a href="mailto:mystie@skiff.com">mystie@skiff.com</a>
+				</li>
+				<li>
+					<img loading="lazy" class="light-invert" src="/static/images/email.png" width="16" title="Email" alt="Mail icon">
+					<a href="mailto:oivan2401@gmail.com">oivan2401@gmail.com</a>
 				</li>
 			</ul>
-			<details>
-				<summary>Other</summary>
-				<ul class="icon-links">
-					<li>
-						<img loading="lazy" class="dark-invert" src="/static/images/matrix.svg" width="16" title="Matrix" alt="Matrix logo">
-						<a href="https://matrix.to/#/@mystie:tchncs.de">@mystie:tchncs.de</a>
-					</li>
-					<li>
-						<img loading="lazy" class="light-invert" src="/static/images/email.png" width="16" title="Email" alt="Mail icon">
-						<a href="mailto:mystie@skiff.com">mystie@skiff.com</a>
-					</li>
-					<li>
-						<img loading="lazy" class="light-invert" src="/static/images/email.png" width="16" title="Email" alt="Mail icon">
-						<a href="mailto:oivan2401@gmail.com">oivan2401@gmail.com</a>
-					</li>
-				</ul>
-			</details>
 		</div>
 	</div>
 	<div class="lg-container" style="margin: 10px auto;">

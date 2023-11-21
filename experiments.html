@@ -9,10 +9,18 @@
 </head>
 <body>
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 		#width-toggle:checked ~ .lg-container, #width-toggle:checked ~ nav,
 		#width-toggle:checked ~ footer {
 			width: 100%;
+		}
+		.options {
+			display: flex;
+			align-items: center;
+		}
+		@media screen and (max-width: 800px) {
+			.options button {
+				width: 100%;
+			}
 		}
 	</style>
 	<nav class="header" style="margin: 10px auto 20px auto;">
@@ -31,15 +39,20 @@
 			<h2>List of experiments:</h2>
 			<h3>Custom CSS</h3>
 			<h4>Description</h4>
-			<p>This lets you apply custom CSS using customized <code>&lt;style&gt;</code> element.<br>Note: CSS applies immediately</p>
-			<details>
-				<summary><b>Try it</b></summary>
-				<!--textarea id="cssTextarea" rows="10"></textarea><br-->
-				<style contenteditable>you can type css here</style>
-			</details>
+			<p>This lets you apply custom CSS using <code>&lt;style&gt;</code> element with <code>contenteditable</code> attribute and JavaScript (for presets).<br>Note: CSS applies immediately</p>
+			<style contenteditable style="margin-bottom: 0;">you can type css here</style>
+			<div class="options">
+				<button id="clear" title="Clear CSS"><i class="ri-eraser-line"></i> Clear</button>
+				<button id="saveButton" title="Save preset"><i class="ri-save-2-line"></i> Save</button>
+			</div>
+			<h4>Default presets</h4>
+			<button id="preset1">Preset 1</button>
+			<button id="preset2">Preset 2</button>
+			<h4>Saved presets <button id="clearSaved"><i class="ri-delete-bin-line"></i> Delete all</button></h4>
+			<div id="savedPresets"></div>
 			<h4>Bugs</h4>
 			<ul>
-				<li style="margin-left: 15px;">Doesn't work properly on mobile devices</li>
+				<li style="margin-left: 15px;">Doesn't work properly on mobile devices (presets do, styling doesn't)</li>
 			</ul>
 			<h3>A <code>&lt;dialog&gt;</code> modal</h3>
 			<h4>Description</h4>
@@ -72,7 +85,59 @@
 				<br>
 				<p style="text-align: center;">Settings are applied automatically</p>
 			</dialog>
-			<button>Show the dialog</button>
+			<button>Settings</button>
+			<dialog>
+				<div style="display: flex; align-items: center; justify-content: space-between;">
+					<h3>Lorem Ipsum</h3>
+					<button autofocus><i class="ri-close-line"></i> Close</button>
+				</div>
+				<br>
+				<p>testing long texts</p>
+				<br>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</dialog>
+			<button>Lorem Ipsum</button>
 			<h4>Bugs</h4>
 			<ul>
 				<li style="margin-left: 15px;">None?</li>
@@ -123,18 +188,19 @@
 		});
 	</script>
 	<script>
-		const dialog = document.querySelector("dialog");
-		const showButton = document.querySelector("dialog + button");
-		const closeButton = document.querySelector("dialog button");
+		const dialogs = Array.from(document.querySelectorAll("dialog"));
+		const showButtons = Array.from(document.querySelectorAll("dialog + button"));
+		dialogs.forEach((dialog, index) => {
+			const showButton = showButtons[index];
+			const closeButton = dialog.querySelector("button");
 
-		// "Show the dialog" button opens the dialog modally
-		showButton.addEventListener("click", () => {
-			dialog.showModal();
-		});
+			showButton.addEventListener("click", () => {
+				dialog.showModal();
+			});
 
-		// "Close" button closes the dialog
-		closeButton.addEventListener("click", () => {
-			dialog.close();
+			closeButton.addEventListener("click", () => {
+				dialog.close();
+			});
 		});
 	</script>
 	<script>
@@ -166,6 +232,96 @@
 				fontCheckbox.checked = false;
 			}
 		});*/
+	</script>
+	<script>
+		// Get references to the buttons and the style element
+		const styleElement = document.querySelector('style[contenteditable]');
+		const saveButton = document.getElementById('saveButton');
+		const savedPresetsContainer = document.getElementById('savedPresets');
+		const clearSavedPresets = document.getElementById('clearSaved')
+
+		// Define the preset styles
+		const presetStyles = [
+			{
+				id: 'preset1',
+				styles: '* { border-radius: 6px !important; }'
+			},
+			{
+				id: 'preset2',
+				styles: '.lg-container:hover { scale: 1.01; } .lg-container, .lg-container:hover { transition: .2s; }'
+			},
+			{
+				id: 'clear',
+				styles: ''
+			}
+		];
+
+		// Add event listeners dynamically using forEach
+		presetStyles.forEach(preset => {
+			const presetButton = document.getElementById(preset.id);
+			presetButton.addEventListener('click', () => {
+				styleElement.textContent = preset.styles;
+			});
+		});
+		function formatDate(date) {
+			const year = date.getFullYear();
+			const month = String(date.getMonth() + 1).padStart(2, '0');
+			const day = String(date.getDate()).padStart(2, '0');
+			const hours = String(date.getHours()).padStart(2, '0');
+			const minutes = String(date.getMinutes()).padStart(2, '0');
+			const seconds = String(date.getSeconds()).padStart(2, '0');
+
+			return `${day}${month}${year}-${hours}${minutes}${seconds}`;
+		}
+		// Event listener for the "Save" button
+		saveButton.addEventListener('click', () => {
+			const currentStyles = styleElement.textContent;
+			const date = new Date();
+			const frmDate = formatDate(date);
+			const saveKey = `presetsave-${frmDate}`;
+
+			// Save to localStorage
+			localStorage.setItem(saveKey, currentStyles);
+
+			// Create a button to load the saved preset
+			const loadButton = document.createElement('button');
+			loadButton.textContent = saveKey;
+			loadButton.addEventListener('click', () => {
+				styleElement.textContent = localStorage.getItem(saveKey);
+			});
+
+			savedPresetsContainer.appendChild(loadButton);
+		});
+		clearSavedPresets.addEventListener('click', () => {
+			Object.keys(localStorage).forEach(key => {
+				if (key.startsWith('presetsave-')) {
+					// Remove the key from localStorage
+					localStorage.removeItem(key);
+				}
+			});
+			savedPresetsContainer.textContent = '';
+		})
+		window.addEventListener('load', () => {
+			const savedPresetsContainer = document.getElementById('savedPresets');
+			const localStorageKeys = Object.keys(localStorage);
+
+			localStorageKeys.forEach(key => {
+				if (key.startsWith('presetsave-')) {
+					const item = localStorage.getItem(key);
+					createLoadButton(savedPresetsContainer, key, item);
+				}
+			});
+		});
+
+		function createLoadButton(container, key, item) {
+			const button = document.createElement('button');
+			button.textContent = key;
+			button.addEventListener('click', () => {
+				styleElement.textContent = localStorage.getItem(key);
+			});
+
+			container.appendChild(button);
+		}
 	</script>
 	<script>
 		const fontHeaderCheckbox = document.querySelector('#fontHeaderChange');

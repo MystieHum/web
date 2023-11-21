@@ -180,7 +180,7 @@
 	--mst-a-decor-color: #7984ff30;
 	--mst-header-hover-link-bg: #7984ff15;
 	--mst-header-active-link-bg: #7984ff30;
-	--mst-input-bg: #333;
+	--mst-input-bg: #282828;
 	--mst-input-border-color: #555;
 }
 :root.light {
@@ -195,11 +195,11 @@
 	--mst-a-decor-color: #515ee630;
 	--mst-header-hover-link-bg: #515ee615;
 	--mst-header-active-link-bg: #515ee630;
-	--mst-input-bg: #ddd;
+	--mst-input-bg: #e3e3e3;
 	--mst-input-border-color: #bbb;
 }
 ::selection {
-	background: rgba(56,139,253,0.2);
+	background: rgba(56, 139, 253, .3);
 }
 * {
 	margin: 0;
@@ -213,11 +213,11 @@ body {
 	font-family: 'Inter', sans-serif;
 	background: var(--mst-bg);
 }
-body, dialog, textarea, style[contenteditable],
-.h-cont a, input {
+body, dialog, textarea,
+style[contenteditable], input {
 	color: var(--mst-color);
 }
-p, a, button, li, textarea, style[contenteditable], summary { font-size: 14px; }
+p, a, button, li, textarea, style[contenteditable], summary, offtop { font-size: 14px; }
 button, .button {
 	border: none;
 	background: transparent;
@@ -263,18 +263,16 @@ button:active, .button:active {
 	background: var(--mst-header-active-link-bg) !important;
 }
 textarea, style[contenteditable] {
-	background: var(--mst-input-bg);
-	border: 2px solid transparent;
+	border: 1px solid transparent;
 	border-radius: 5px;
 	padding: 10px;
-	margin: 10px 0;
+	margin: 5px 0;
 	width: 100%;
 	resize: vertical;
 	display: block;
 }
 textarea:focus, style[contenteditable]:focus-visible {
 	outline: none;
-	border-color: var(--mst-input-border-color) !important;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: "DM Sans", sans-serif;
@@ -286,7 +284,7 @@ a, a:visited {
 	text-underline-offset: 3px;
 }
 a, a:hover, .h-cont a, .h-cont a:hover, button:hover, button,
-.button, .button:hover {
+.button, .button:hover, .header img, .header img:hover {
 	transition: .2s !important;
 }
 a:hover {
@@ -308,19 +306,19 @@ offtop {
 	font-size: 24px;
 	margin-left: 5px;
 	visibility: hidden;
-	transition: visibility 0s linear 0.3s;
 }
 .h-cont a::before {
 	content: '#';
 }
 .h-cont:hover a {
 	visibility: visible;
-	transition-delay: 0s;
 }
 .lg-container, .header, footer {
 	width: 70%;
-	background: var(--mst-container-bg);
 	align-items: center;
+}
+.lg-container, footer {
+	background: var(--mst-container-bg);
 }
 .lg-container, .header, .h-cont,
 .icon-links li, .asset, .asset-desc, .asset-preview,
@@ -344,9 +342,13 @@ offtop {
 	box-shadow: 0px 5px 20px 1px var(--mst-bg);
 	z-index: 1;
 	justify-content: space-between;
+	background: var(--mst-container-bg);
 }
 .header img {
 	margin-right: 5px;
+}
+.header img:hover, body#home #home-link {
+	box-shadow: 0 0 20px var(--mst-a-decor-color);
 }
 .header a, button, .button {
 	padding: 7px;
@@ -363,7 +365,6 @@ offtop {
 .header a[data-logo]:hover, .header a[data-logo]:active {
 	background: transparent;
 }
-body#home a#home-link,
 body#feedback a#feedback-link,
 body#assets a#assets-link, .header a:hover,
 .button:hover, button:hover {
@@ -374,10 +375,10 @@ body#assets a#assets-link, .header a:hover,
 .header a:active {
 	background: var(--mst-header-active-link-bg);
 }
-.header a:active, .button:active, button:active {
-	/*box-shadow: 0px 0px 30px 2px var(--mst-header-active-link-bg);*/
+/*.header a:active, .button:active, button:active {
+	/*box-shadow: 0px 0px 30px 2px var(--mst-header-active-link-bg);
 	text-shadow: 0px 0px 30px var(--mst-a-color);
-}
+}*/
 .no-decor {
 	text-decoration: none !important;
 }
@@ -413,19 +414,22 @@ input[type="checkbox"] {
 	width: 20px;
 	height: 20px;
 	appearance: none;
-	background: var(--mst-input-bg);
 	border-radius: 3px;
 	border: 1px solid transparent;
 	margin-right: 5px;
 	display: inline-flex;
 	font-family: "remixicon";
 }
+input[type="checkbox"], textarea, style[contenteditable] {
+	background: var(--mst-input-bg);
+}
 input[type="checkbox"]:before {
 	content: '';
 	margin: auto;
 }
-input[type="checkbox"]:hover {
-	border-color: var(--mst-input-border-color);
+input[type="checkbox"]:hover,
+textarea:focus, style[contenteditable]:focus-visible {
+	border-color: var(--mst-input-border-color) !important;
 }
 input[type="checkbox"]:active {
 	filter: brightness(1.5);
@@ -492,6 +496,10 @@ input {
 @media screen and (max-width: 800px) {
 	.lg-container, .header, footer {
 		width: 95% !important;
+	}
+	.header {
+		backdrop-filter: none !important;
+		background: var(--mst-container-bg);
 	}
 	dialog {
 		max-width: 95% !important;
