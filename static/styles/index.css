@@ -212,7 +212,7 @@ html {
 body {
 	background: var(--mst-bg);
 }
-body, button, .button, textarea {
+body, button, .button, textarea, input {
 	font-family: 'Inter', sans-serif;
 }
 body, dialog, textarea,
@@ -277,7 +277,7 @@ textarea:focus, style[contenteditable]:focus-visible, input[type="text"]:focus {
 	outline: none;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "DM Sans", sans-serif;
+	font-family: 'DM Sans', sans-serif;
 	font-size: revert;
 }
 a, a:visited {
@@ -405,9 +405,6 @@ body#assets a#assets-link, .header a:hover,
 }
 .tcenter {
 	text-align: center;
-}
-.inter {
-	font-family: 'Inter', sans-serif;
 }
 .sans-serif {
 	font-family: sans-serif;
