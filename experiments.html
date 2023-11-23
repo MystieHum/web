@@ -48,6 +48,8 @@
 			<h4>Default presets</h4>
 			<button id="preset1">Preset 1</button>
 			<button id="preset2">Preset 2</button>
+			<button id="preset3">Preset 3</button>
+			<button id="preset4">Preset 4</button>
 			<h4>Saved presets <button id="clearSaved"><i class="ri-delete-bin-line"></i> Delete all</button></h4>
 			<div id="savedPresets"></div>
 			<h4>Bugs</h4>
@@ -187,22 +189,7 @@
 			});
 		});
 	</script>
-	<script>
-		const dialogs = Array.from(document.querySelectorAll("dialog"));
-		const showButtons = Array.from(document.querySelectorAll("dialog + button"));
-		dialogs.forEach((dialog, index) => {
-			const showButton = showButtons[index];
-			const closeButton = dialog.querySelector("button");
-
-			showButton.addEventListener("click", () => {
-				dialog.showModal();
-			});
-
-			closeButton.addEventListener("click", () => {
-				dialog.close();
-			});
-		});
-	</script>
+	<script src="/static/scripts/dialog.min.js"></script>
 	<script>
 		/*const fontCheckbox = document.querySelector('#fontChange');
 		fontCheckbox.addEventListener('change', function() {
@@ -249,6 +236,14 @@
 			{
 				id: 'preset2',
 				styles: '.lg-container:hover { scale: 1.01; } .lg-container, .lg-container:hover { transition: .2s; }'
+			},
+			{
+				id: 'preset3',
+				styles: ':root { --mst-bg: #001525; --mst-container-bg: #001e35; --mst-input-bg: #002846; --mst-input-border-color: #0091ff; }'
+			},
+			{
+				id: 'preset4',
+				styles: ':root, :root.light { --mst-bg: #001525; --mst-color: #fff; --mst-container-bg: #001e35; --mst-input-bg: #002846; --mst-input-border-color: #0091ff; --mst-a-color: #0091ff; } .lg-container, .header, footer { border: 1px solid var(--mst-input-border-color); }'
 			},
 			{
 				id: 'clear',

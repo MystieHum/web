@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/static/styles/index.min.css" rel="stylesheet">
+	<link href="/static/styles/remixicon/fonts/remixicon.min.css" rel="stylesheet">
+	<title>Design Cheatsheet</title>
+</head>
+<body>
+	<nav class="header" style="margin: 10px auto 20px auto;">
+		<div class="main-content" style="display: flex; align-items: center;">
+			<a href="/" data-logo><img id="home-link" src="/static/images/mst-avatar.webp" width="36" height="36" alt="MystieHum avatar"></a>
+			<div class="nav-links" style="display: flex;">
+				<a href="/assets.html" id="assets-link">Assets</a>
+				<a href="/feedback.html" id="feedback-link">Feedback</a>
+				<a href="https://mystie.bearblog.dev" title="https://mystie.bearblog.dev" target="_blank">Blog<i class="ri-arrow-right-up-line"></i></a>
+			</div>
+		</div>
+		<a href="javascript:toggleTheme()"><i class="ri-palette-line"></i> Theme</a>
+	</nav>
+	<div class="lg-container" style="margin: 10px auto;">
+		<div class="content">
+			<h2>Design Cheatsheet</h2>
+			<h3>Buttons</h3>
+			<button>Regular button</button>
+			<a class="button" href="javascript:void(0)">Link with .button class</a>
+			<div class="header" style="padding: 0; margin: 0; max-width: fit-content; display: inline-block; position: relative; z-index: 0;">
+				<a href="javascript:void(0)">Header link</a>
+			</div>
+			<h3>Links</h3>
+			<a href="javascript:void(0)">Regular link</a>
+			<footer style="padding: 0; margin: 0; max-width: fit-content; display: inline-block;">
+				<a href="javascript:void(0)">Footer link</a>
+			</footer>
+			<h3>Regular headers</h3>
+			<h1>Header 1</h1>
+			<h2>Header 2</h2>
+			<h3>Header 3</h3>
+			<h4>Header 4</h4>
+			<h5>Header 5</h5>
+			<h6>Header 6</h6>
+			<h3>.h-cont headers</h3>
+			<div class="h-cont">
+				<h1 id="h1">Header 1</h1>
+				<a href="#h1"></a>
+			</div>
+			<div class="h-cont">
+				<h2 id="h2">Header 2</h2>
+				<a href="#h2"></a>
+			</div>
+			<div class="h-cont">
+				<h3 id="h3">Header 3</h3>
+				<a href="#h3"></a>
+			</div>
+			<div class="h-cont">
+				<h4 id="h4">Header 4</h4>
+				<a href="#h4"></a>
+			</div>
+			<div class="h-cont">
+				<h5 id="h5">Header 5</h5>
+				<a href="#h5"></a>
+			</div>
+			<div class="h-cont">
+				<h6 id="h6">Header 6</h6>
+				<a href="#h6"></a>
+			</div>
+			<h3>Inputs</h3>
+			<textarea placeholder="textarea"></textarea>
+			<input type="text" placeholder="input type='text'">
+			<style contenteditable>style[contenteditable]</style>
+			<label for="check">
+				<input type="checkbox" id="check">
+				Checkbox
+			</label>
+			<label for="radio">
+				<input type="radio" id="radio" name="radio">
+				Radio
+			</label>
+			<label for="radio2">
+				<input type="radio" id="radio2" name="radio">
+				Another radio
+			</label>
+			<h3>Images</h3>
+			<img src="/static/images/firefox.png" alt="Take back the web" title="Regular image">
+			<h3>Dialogs & details</h3>
+			<dialog>
+				<div style="display: flex; align-items: center; justify-content: space-between;">
+					<h3>Dialog</h3>
+					<button autofocus><i class="ri-close-line"></i> Close</button>
+				</div>
+				<br>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</dialog>
+			<button>Open dialog</button>
+			<details>
+				<summary>Open details</summary>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</details>
+		</div>
+	</div>
+	<footer style="margin: 10px auto;">
+		<p>Made by <a href="https://wetdry.world/@mystie">MystieHum</a> in 2023, open-source on <a href="https://github.com/MystieHum/web">GitHub</a>, hosted on <a href="https://heliohost.org">HelioHost</a>. Fonts used: <a href="https://fonts.google.com/specimen/Inter">Inter</a>, <a href="https://fonts.google.com/specimen/DM+Sans">DM Sans</a></p>
+		<p>You are currently on the <b class="dark-only">dark</b><b class="light-only">light</b> side <a href="javascript:toggleTheme()">(switch?)</a></p>
+	</footer>
+<script src="/static/scripts/theme.min.js"></script>
+<script src="/static/scripts/dialog.min.js"></script>
+</body>
+</html>

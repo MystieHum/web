@@ -210,22 +210,24 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	font-family: 'Inter', sans-serif;
 	background: var(--mst-bg);
+}
+body, button, .button, textarea {
+	font-family: 'Inter', sans-serif;
 }
 body, dialog, textarea,
 style[contenteditable], input {
 	color: var(--mst-color);
 }
-p, a, button, li, textarea, style[contenteditable], summary, offtop { font-size: 14px; }
+p, a, button, li, textarea, style[contenteditable],
+summary, offtop, input[type="text"], label { font-size: 14px; }
 button, .button {
 	border: none;
 	background: transparent;
 	color: var(--mst-a-color);
 	user-select: none;
-	font-family: 'Inter', sans-serif;
 }
-button, .button, input[type="checkbox"], label, summary {
+button, .button, input[type="checkbox"], input[type="radio"], label, summary {
 	cursor: pointer;
 }
 summary {
@@ -235,7 +237,7 @@ dialog {
 	background: var(--mst-container-bg);
 	margin: auto;
 	max-width: 60%;
-	border: 1px solid var(--mst-input-border-color);
+	border: none;
 	padding: 20px;
 	border-radius: 3px;
 	min-width: 600px;
@@ -245,7 +247,7 @@ dialog {
 }
 dialog::backdrop {
     opacity: 0.65;
-    background: #1a1a1a;
+    background: #373737;
 }
 .button, .header a, footer a, footer a:hover {
 	text-decoration: none;
@@ -262,20 +264,21 @@ button:hover, .button:hover {
 button:active, .button:active {
 	background: var(--mst-header-active-link-bg) !important;
 }
-textarea, style[contenteditable] {
+textarea, style[contenteditable], input[type="text"] {
 	border: 1px solid transparent;
-	border-radius: 5px;
+	border-radius: 3px;
 	padding: 10px;
 	margin: 5px 0;
 	width: 100%;
 	resize: vertical;
 	display: block;
 }
-textarea:focus, style[contenteditable]:focus-visible {
+textarea:focus, style[contenteditable]:focus-visible, input[type="text"]:focus {
 	outline: none;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: "DM Sans", sans-serif;
+	font-size: revert;
 }
 a, a:visited {
 	color: var(--mst-a-color);
@@ -312,6 +315,24 @@ offtop {
 }
 .h-cont:hover a {
 	visibility: visible;
+}
+.h-cont h1 + a {
+	font-size: 24px;
+}
+.h-cont h2 + a {
+	font-size: 22px;
+}
+.h-cont h3 + a {
+	font-size: 20px;
+}
+.h-cont h4 + a {
+	font-size: 18px;
+}
+.h-cont h5 + a {
+	font-size: 16px;
+}
+.h-cont h6 + a {
+	font-size: 14px;
 }
 .lg-container, .header, footer {
 	width: 70%;
@@ -411,35 +432,46 @@ label code {
 	margin-left: 3px;
 }
 input[type="checkbox"] {
+	border-radius: 3px;
+}
+input[type="radio"] {
+	border-radius: 100%;
+}
+input[type="checkbox"], input[type="radio"] {
 	width: 20px;
 	height: 20px;
 	appearance: none;
-	border-radius: 3px;
 	border: 1px solid transparent;
 	margin-right: 5px;
 	display: inline-flex;
 	font-family: "remixicon";
 }
-input[type="checkbox"], textarea, style[contenteditable] {
+input[type="checkbox"], textarea, style[contenteditable],
+input[type="text"], input[type="radio"] {
 	background: var(--mst-input-bg);
 }
-input[type="checkbox"]:before {
+input[type="checkbox"]:before, input[type="radio"]:before {
 	content: '';
 	margin: auto;
 }
-input[type="checkbox"]:hover,
-textarea:focus, style[contenteditable]:focus-visible {
+input[type="checkbox"]:hover, input[type="radio"]:hover,
+textarea:focus, style[contenteditable]:focus-visible, input[type="text"]:focus {
 	border-color: var(--mst-input-border-color) !important;
 }
-input[type="checkbox"]:active {
+input[type="checkbox"]:active, input[type="radio"]:active {
 	filter: brightness(1.5);
 }
-:root.light input[type="checkbox"]:active {
+:root.light input[type="checkbox"]:active,
+:root.light input[type="radio"]:active {
 	filter: brightness(0.9);
 }
 input[type="checkbox"]:checked::before {
 	content: '\eb7b';
 	font-size: 16px;
+}
+input[type="radio"]:checked::before {
+	content: '\f3c1';
+	font-size: 7px;
 }
 input {
 	accent-color: var(--mst-input-bg);
@@ -528,10 +560,10 @@ input {
 		transition: .2s;
 		text-decoration-thickness: 1px;
 	}
-	input[type="checkbox"]:checked::before {
+	input[type="checkbox"]:checked::before, input[type="radio"]:checked::before {
 		font-size: 18px !important;
 	}
-	input[type="checkbox"] {
+	input[type="checkbox"], input[type="radio"] {
 		width: 24px !important;
 		height: 24px !important;
 	}
