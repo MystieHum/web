@@ -468,7 +468,7 @@ input[type="checkbox"]:checked::before {
 }
 input[type="radio"]:checked::before {
 	content: '\f3c1';
-	font-size: 7px;
+	font-size: 8px;
 }
 input {
 	accent-color: var(--mst-input-bg);
@@ -557,7 +557,7 @@ input {
 		transition: .2s;
 		text-decoration-thickness: 1px;
 	}
-	input[type="checkbox"]:checked::before, input[type="radio"]:checked::before {
+	input[type="checkbox"]:checked::before {
 		font-size: 18px !important;
 	}
 	input[type="checkbox"], input[type="radio"] {
