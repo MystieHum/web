@@ -34,6 +34,16 @@
 	<title>FoxHome</title>
 </head>
 <body>
+	<style>
+		#back {
+			float: right;
+		}
+		@media (max-width: 800px) {
+			#back {
+				float: none !important;
+			}
+		}
+	</style>
 	<main>
 		<div class="logo">
 			<img src="/p/foxhome/firefox-but-blobfox.png" alt="Firefox but Blobfox" width="285">
@@ -44,10 +54,10 @@
 				<input type="submit" value="Search" style="margin-left: -70px;">
 			</form>
 		</div>
-		<h3 style="margin-top: 30px;" id="randomMessage"></h3>
+		<h3 style="margin-top: 30px; text-align: center;" id="randomMessage"></h3>
 	</main>
 	<footer style="width: 100%;">
-		<p>FoxHome Alpha, version from 04.12.2023 <a href="/" style="color: inherit !important; font-weight: inherit; float: right;">Back to mystie.is-a.dev</a></p>
+		<p>FoxHome Alpha, version from 04.12.2023<br class="mobile"><a id="back" href="/" style="color: inherit !important; font-weight: inherit;">Back to mystie.is-a.dev</a></p>
 	</footer>
 	<script>
 		const messages = [

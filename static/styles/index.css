@@ -192,10 +192,10 @@
 	--mst-container-bg: #f2f2f2;
 	--mst-secondary-container-bg: #eaeaea;
 	--mst-color: #222;
-	--mst-a-color: #515ee6;
-	--mst-a-decor-color: #515ee630;
-	--mst-header-hover-link-bg: #515ee615;
-	--mst-header-active-link-bg: #515ee630;
+	--mst-a-color: #0070c6;
+	--mst-a-decor-color: #0070c630;
+	--mst-header-hover-link-bg: #0070c615;
+	--mst-header-active-link-bg: #0070c630;
 	--mst-input-bg: #e3e3e3;
 	--mst-input-border-color: #bbb;
 }
