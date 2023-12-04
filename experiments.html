@@ -50,6 +50,7 @@
 			<button id="preset2">Preset 2</button>
 			<button id="preset3">Preset 3</button>
 			<button id="preset4">Preset 4</button>
+			<button id="preset5">Preset 5</button>
 			<h4>Saved presets <button id="clearSaved"><i class="ri-delete-bin-line"></i> Delete all</button></h4>
 			<div id="savedPresets"></div>
 			<h4>Bugs</h4>
@@ -62,7 +63,7 @@
 			<dialog>
 				<div style="display: flex; align-items: center; justify-content: space-between;">
 					<h3>Settings</h3>
-					<button autofocus><i class="ri-close-line"></i> Close</button>
+					<button data-dialog-close><i class="ri-close-line"></i> Close</button>
 				</div>
 				<br>
 				<h4>Width</h4>
@@ -87,11 +88,11 @@
 				<br>
 				<p style="text-align: center;">Settings are applied automatically</p>
 			</dialog>
-			<button>Settings</button>
+			<button data-dialog-open>Settings</button>
 			<dialog>
 				<div style="display: flex; align-items: center; justify-content: space-between;">
 					<h3>Lorem Ipsum</h3>
-					<button autofocus><i class="ri-close-line"></i> Close</button>
+					<button data-dialog-close><i class="ri-close-line"></i> Close</button>
 				</div>
 				<br>
 				<p>testing long texts</p>
@@ -139,7 +140,7 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</dialog>
-			<button>Lorem Ipsum</button>
+			<button data-dialog-open>Lorem Ipsum</button>
 			<h4>Bugs</h4>
 			<ul>
 				<li style="margin-left: 15px;">None?</li>
@@ -244,6 +245,10 @@
 			{
 				id: 'preset4',
 				styles: ':root, :root.light { --mst-bg: #001525; --mst-color: #fff; --mst-container-bg: #001e35; --mst-input-bg: #002846; --mst-input-border-color: #0091ff; --mst-a-color: #0091ff; } .lg-container, .header, footer { border: 1px solid var(--mst-input-border-color); }'
+			},
+			{
+				id: 'preset5',
+				styles: ':root { --mst-bg: #0f110d;--mst-warn-bg: #482500;--mst-warn-btn-bg-hover: #552c00;--mst-warn-btn-bg-active: #603200;--mst-container-bg: #1a2016;--mst-secondary-container-bg: #222;--mst-color: #e5e9e3;--mst-a-color: #b8c5b3;--mst-a-decor-color: #b8c5b330;--mst-header-hover-link-bg: #b8c5b315;--mst-header-active-link-bg: #b8c5b330;--mst-input-bg: #262f20;--mst-input-border-color: transparent;--mst-muted-color: #444; }'
 			},
 			{
 				id: 'clear',

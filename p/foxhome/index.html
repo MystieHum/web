@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/p/foxhome/foxhome.min.css" rel="stylesheet">
+	<link href="/static/styles/index.min.css" rel="stylesheet">
+	<link href="/static/styles/remixicon/fonts/remixicon.min.css" rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="120x120" href="/p/foxhome/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/p/foxhome/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/p/foxhome/icons/favicon-16x16.png">
+	<link rel="manifest" href="/p/foxhome/icons/site.webmanifest">
+	<link rel="mask-icon" href="/p/foxhome/icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/p/foxhome/icons/favicon.ico">
+	<title>FoxHome</title>
+</head>
+<body>
+	<main>
+		<div class="logo">
+			<img src="/p/foxhome/firefox-but-blobfox.png" alt="Firefox but Blobfox" width="285">
+		</div>
+		<div class="search">
+			<form action="https://www.google.com/search" method="GET" target="_blank" style="display: flex; align-items: center;">
+				<input tabindex="0" type="text" name="q" id="searchInput" placeholder="Search with Google" />
+				<input type="submit" value="Search" style="margin-left: -70px;">
+			</form>
+		</div>
+		<h3 style="margin-top: 30px;" id="randomMessage"></h3>
+	</main>
+	<footer style="width: 100%;">
+		<p>FoxHome Alpha, version from 04.12.2023 <a href="/" style="color: inherit !important; font-weight: inherit; float: right;">Back to mystie.is-a.dev</a></p>
+	</footer>
+	<script>
+		const messages = [
+			"blobfoxes :0",
+			"i'm a certified blobfox enjoyer",
+			"waf",
+			"fops",
+			"firefox? why would you fire the fox??",
+			"waaaaaaaaaaaaafffff",
+			"arf",
+			"fopsfopsfopsfopsfopsfopsfops"
+		];
+		let currentIndex = -1;
+		const messageElement = document.getElementById("randomMessage");
+
+		function displayMessage() {
+			const randomIndex = Math.floor(Math.random() * messages.length);
+			currentIndex = (currentIndex + 1) % messages.length;
+			messageElement.style.opacity = 0;
+
+			setTimeout(function() {
+				const randomIndexFix = messages[randomIndex];
+				messageElement.textContent = randomIndexFix;
+				messageElement.style.opacity = 0.7;
+				document.title = "FoxHome - " + randomIndexFix;
+			}, 500);
+		}
+		function handleClick() {
+			displayMessage();
+		}
+		messageElement.addEventListener("click", handleClick);
+
+		displayMessage();
+		setInterval(displayMessage, 10000);
+	</script>
+</body>
+</html>
