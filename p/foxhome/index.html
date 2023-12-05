@@ -33,7 +33,7 @@
 	<meta property="twitter:image" content="https://mystie.is-a.dev/p/foxhome/blobfoxsanta.png" />
 	<title>FoxHome</title>
 </head>
-<body>
+<body onload="displayMessage()">
 	<style>
 		#back {
 			float: right;
@@ -57,7 +57,7 @@
 		<h3 style="margin-top: 30px; text-align: center;" id="randomMessage"></h3>
 	</main>
 	<footer style="width: 100%;">
-		<p>FoxHome Alpha, version from 04.12.2023<br class="mobile"><a id="back" href="/" style="color: inherit !important; font-weight: inherit;">Back to mystie.is-a.dev</a></p>
+		<p>FoxHome Alpha, version from 05.12.2023<br class="mobile"><a id="back" href="/" style="color: inherit !important; font-weight: inherit;">Back to mystie.is-a.dev</a></p>
 	</footer>
 	<script>
 		const messages = [
@@ -80,7 +80,8 @@
 			"blobfox plushies...",
 			"don't fire the fox",
 			"i'm just a really fluffy fox",
-			"aaaaaaaaaaaaaaaaaaa"
+			"aaaaaaaaaaaaaaaaaaa",
+			"the fox continues to fox"
 		];
 		let currentIndex = -1;
 		const messageElement = document.getElementById("randomMessage");
@@ -101,8 +102,6 @@
 			displayMessage();
 		}
 		messageElement.addEventListener("click", handleClick);
-
-		displayMessage();
 		setInterval(displayMessage, 10000);
 	</script>
 </body>
