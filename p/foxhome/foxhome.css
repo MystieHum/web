@@ -66,10 +66,22 @@ button, .button {
 .search {
 	width: 50%;
 }
+.mobile-span {
+	display: none;
+}
 @media (max-width: 800px) {
 	.search {
 		width: 100% !important;
 	}
+	#back {
+		float: none !important;
+	}
+	.mobile-span {
+		display: inline !important;
+	}
+}
+#back {
+	float: right;
 }
 footer {
 	border-radius: 0 !important;
