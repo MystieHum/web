@@ -79,3 +79,7 @@ footer {
 	background: 0 0 !important;
 	color: var(--mst-muted-color);
 }
+footer p a, footer p a:hover {
+	color: inherit !important;
+	font-weight: inherit;
+}

@@ -198,6 +198,7 @@
 	--mst-header-active-link-bg: #0070c630;
 	--mst-input-bg: #e3e3e3;
 	--mst-input-border-color: #bbb;
+	--mst-muted-color: #b9b9b9;
 }
 ::selection {
 	background: rgba(56, 139, 253, .3);

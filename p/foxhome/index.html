@@ -46,7 +46,8 @@
 	</style>
 	<main>
 		<div class="logo">
-			<img src="/p/foxhome/firefox-but-blobfox.png" alt="Firefox but Blobfox" width="285">
+			<img class="dark-only" src="/p/foxhome/firefox-but-blobfox.png" alt="Firefox but Blobfox" width="285">
+			<img class="light-only" src="/p/foxhome/firefox-but-blobfox-invert.png" alt="Firefox but Blobfox" width="285">
 		</div>
 		<div class="search">
 			<form action="https://www.google.com/search" method="GET" target="_blank" style="display: flex; align-items: center;">
@@ -57,7 +58,7 @@
 		<h3 style="margin-top: 30px; text-align: center;" id="randomMessage"></h3>
 	</main>
 	<footer style="width: 100%;">
-		<p>FoxHome Alpha, version from 05.12.2023<br class="mobile"><a id="back" href="/" style="color: inherit !important; font-weight: inherit;">Back to mystie.is-a.dev</a></p>
+		<p>FoxHome Alpha, version from 06.12.2023 · <a href="javascript:toggleTheme()">Theme</a><br class="mobile"><a id="back" href="/">Back to mystie.is-a.dev</a></p>
 	</footer>
 	<script>
 		const messages = [
@@ -104,5 +105,6 @@
 		messageElement.addEventListener("click", handleClick);
 		setInterval(displayMessage, 10000);
 	</script>
+	<script src="/static/scripts/theme.min.js"></script>
 </body>
 </html>
