@@ -168,6 +168,8 @@
 	src: url('/static/fonts/inter-v13-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* vars */
+
 :root {
 	--mst-bg: #111;
 	--mst-warn-bg: #482500;
@@ -200,6 +202,7 @@
 	--mst-input-border-color: #bbb;
 	--mst-muted-color: #b9b9b9;
 }
+/* base styling */
 ::selection {
 	background: rgba(56, 139, 253, .3);
 }
@@ -223,7 +226,10 @@ style[contenteditable], input {
 	color: var(--mst-color);
 }
 p, a, button, li, textarea, style[contenteditable],
-summary, offtop, input[type="text"], label, input[type="submit"] { font-size: 14px; }
+summary, offtop, input[type="text"], label, input[type="submit"] {
+	font-size: 14px;
+}
+/* buttons */
 button, .button, input[type="submit"] {
 	border: none;
 	background: transparent;
@@ -235,6 +241,20 @@ input[type="radio"], label, summary,
 input[type="submit"] {
 	cursor: pointer;
 }
+/* warning buttons are not used anywhere (at least for now) */
+/*.warn-btn:hover {
+	background: var(--mst-warn-btn-bg-hover) !important;
+}
+.warn-btn:active {
+	background: var(--mst-warn-btn-bg-active) !important;
+}*/
+button:hover, .button:hover, input[type="submit"]:hover {
+	background: var(--mst-header-hover-link-bg);
+}
+button:active, .button:active, input[type="submit"]:active {
+	background: var(--mst-header-active-link-bg) !important;
+}
+/* summary & dialog */
 summary {
 	max-width: fit-content;
 }
@@ -254,21 +274,11 @@ dialog::backdrop {
     opacity: 0.65;
     background: #373737;
 }
+/* no decoration for buttons and footer links */
 .button, .header a, footer a, footer a:hover {
 	text-decoration: none;
 }
-/*.warn-btn:hover {
-	background: var(--mst-warn-btn-bg-hover) !important;
-}
-.warn-btn:active {
-	background: var(--mst-warn-btn-bg-active) !important;
-}*/
-button:hover, .button:hover, input[type="submit"]:hover {
-	background: var(--mst-header-hover-link-bg);
-}
-button:active, .button:active, input[type="submit"]:active {
-	background: var(--mst-header-active-link-bg) !important;
-}
+/* inputs */
 textarea, style[contenteditable], input[type="text"] {
 	border: 1px solid transparent;
 	border-radius: 3px;
@@ -281,10 +291,12 @@ textarea, style[contenteditable], input[type="text"] {
 textarea:focus, style[contenteditable]:focus-visible, input[type="text"]:focus {
 	outline: none;
 }
+/* headers */
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'DM Sans', sans-serif;
 	font-size: revert;
 }
+/* links and stuff */
 a, a:visited {
 	color: var(--mst-a-color);
 	text-decoration: underline;
@@ -300,6 +312,7 @@ a:hover {
 	text-decoration-color: var(--mst-a-color);
 	text-shadow: 0px 0px 30px var(--mst-a-color);
 }
+/* offtop */
 offtop {
 	opacity: 0.5;
 }
@@ -307,6 +320,7 @@ offtop {
 	display: none;
 	background: var(--mst-warn-bg);
 }*/
+/* header containers */
 .h-cont {
 	align-items: center;
 	width: fit-content;
@@ -340,6 +354,7 @@ offtop {
 .h-cont h6 + a {
 	font-size: 14px;
 }
+/* regular containers */
 .lg-container, .header, footer {
 	width: 70%;
 	align-items: center;
@@ -386,6 +401,7 @@ input[type="submit"] {
 /*.header a, .header a:hover, .header a:active {
 	transition: .1s;
 }*/
+/* we don't want the header logo link to be visible */
 .header a[data-logo] {
 	padding: 0;
 	margin: 0;
@@ -394,6 +410,7 @@ input[type="submit"] {
 .header a[data-logo]:hover, .header a[data-logo]:active {
 	background: transparent;
 }
+/* active links and more button styles */
 body#feedback a#feedback-link,
 body#assets a#assets-link, .header a:hover,
 .button:hover, button:hover, input[type="submit"]:hover {
@@ -408,15 +425,18 @@ body#assets a#assets-link, .header a:hover,
 	/*box-shadow: 0px 0px 30px 2px var(--mst-header-active-link-bg);
 	text-shadow: 0px 0px 30px var(--mst-a-color);
 }*/
+/* is this actually used anywhere? i forgor */
 .no-decor {
 	text-decoration: none !important;
 }
 .tcenter {
 	text-align: center;
 }
+/* for a script on /experiments.html */
 .sans-serif {
 	font-family: sans-serif;
 }
+/* footer links styling */
 footer a, footer a:hover {
 	color: var(--mst-color) !important;
 }
@@ -426,6 +446,7 @@ footer a {
 footer a:hover {
 	opacity: 0.8;
 }
+/* more inputs (should probably re-organize this) */
 label {
 	user-select: none;
 	display: flex;
@@ -436,6 +457,7 @@ label {
 label code {
 	margin-left: 3px;
 }
+/* checkboxes and radios */
 input[type="checkbox"] {
 	border-radius: 3px;
 }
@@ -476,8 +498,9 @@ input[type="checkbox"]:checked::before {
 }
 input[type="radio"]:checked::before {
 	content: '\f3c1';
-	font-size: 8px;
+	font-size: 14px;
 }
+/* what is this input doing alone from other regular inputs */
 input {
 	accent-color: var(--mst-input-bg);
 	background: var(--mst-input-border-color);
@@ -485,6 +508,7 @@ input {
 .icon-links li, .asset-preview, .header.main-content {
 	align-items: center;
 }
+/* for theming */
 :root.light .light-invert,
 :root.dark .dark-invert {
 	filter: invert();
@@ -504,12 +528,15 @@ input {
 .icon-links li img {
 	margin-right: 3px;
 }
+/* i think this one is only used in /assets.html */
 .centered {
 	margin: auto;
 }
+/* i don't think i actually use .none */
 .none, .mobile {
 	display: none;
 }
+/* for /assets.html */
 .asset-desc, .asset-preview {
 	flex-direction: column;
 }
