@@ -172,35 +172,39 @@
 
 :root {
 	--mst-bg: #111;
+	/* unused
 	--mst-warn-bg: #482500;
 	--mst-warn-btn-bg-hover: #552c00;
 	--mst-warn-btn-bg-active: #603200;
-	--mst-container-bg: #1a1a1a;
-	--mst-secondary-container-bg: #222;
+	*/
+	--mst-prm-cont: #1a1a1a;
+	--mst-sec-cont: #222;
 	--mst-color: #fff;
-	--mst-a-color: #0091ff;
-	--mst-a-decor-color: #0091ff30;
-	--mst-header-hover-link-bg: #0091ff15;
-	--mst-header-active-link-bg: #0091ff30;
-	--mst-input-bg: #282828;
-	--mst-input-border-color: #555;
-	--mst-muted-color: #444;
+	--mst-accent: #0091ff;
+	--mst-a-decor: #0091ff30;
+	--mst-header-hover: #0091ff15;
+	--mst-header-active: #0091ff30;
+	--mst-input: #282828;
+	--mst-input-border: #555;
+	--mst-muted: #444;
 }
 :root.light {
 	--mst-bg: #eaeaea;
+	/* unused
 	--mst-warn-bg: #ffd9b3;
 	--mst-warn-btn-bg-hover: #ffcd9b;
 	--mst-warn-btn-bg-active: #f2be8a;
-	--mst-container-bg: #f2f2f2;
-	--mst-secondary-container-bg: #eaeaea;
+	*/
+	--mst-prm-cont: #f2f2f2;
+	--mst-sec-cont: #eaeaea;
 	--mst-color: #222;
-	--mst-a-color: #0070c6;
-	--mst-a-decor-color: #0070c630;
-	--mst-header-hover-link-bg: #0070c615;
-	--mst-header-active-link-bg: #0070c630;
-	--mst-input-bg: #e3e3e3;
-	--mst-input-border-color: #bbb;
-	--mst-muted-color: #b9b9b9;
+	--mst-accent: #0070c6;
+	--mst-a-decor: #0070c630;
+	--mst-header-hover: #0070c615;
+	--mst-header-active: #0070c630;
+	--mst-input: #e3e3e3;
+	--mst-input-border: #bbb;
+	--mst-muted: #b9b9b9;
 }
 /* base styling */
 ::selection {
@@ -233,7 +237,7 @@ summary, offtop, input[type="text"], label, input[type="submit"] {
 button, .button, input[type="submit"] {
 	border: none;
 	background: transparent;
-	color: var(--mst-a-color);
+	color: var(--mst-accent);
 	user-select: none;
 }
 button, .button, input[type="checkbox"],
@@ -249,17 +253,17 @@ input[type="submit"] {
 	background: var(--mst-warn-btn-bg-active) !important;
 }*/
 button:hover, .button:hover, input[type="submit"]:hover {
-	background: var(--mst-header-hover-link-bg);
+	background: var(--mst-header-hover);
 }
 button:active, .button:active, input[type="submit"]:active {
-	background: var(--mst-header-active-link-bg) !important;
+	background: var(--mst-header-active) !important;
 }
 /* summary & dialog */
 summary {
 	max-width: fit-content;
 }
 dialog {
-	background: var(--mst-container-bg);
+	background: var(--mst-prm-cont);
 	margin: auto;
 	max-width: 60%;
 	border: none;
@@ -298,19 +302,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* links and stuff */
 a, a:visited {
-	color: var(--mst-a-color);
+	color: var(--mst-accent);
 	text-decoration: underline;
-	text-decoration-color: var(--mst-a-decor-color);
+	text-decoration-color: var(--mst-a-decor);
 	text-underline-offset: 3px;
 }
 a, a:hover, .h-cont a, .h-cont a:hover, button:hover, button,
 .button, .button:hover, .header img, .header img:hover,
-input[type="submit"]:hover, input[type="submit"] {
+input[type="submit"]:hover, input[type="submit"], img, img:hover,
+.asset, .asset:hover {
 	transition: .2s !important;
 }
 a:hover {
-	text-decoration-color: var(--mst-a-color);
-	text-shadow: 0px 0px 30px var(--mst-a-color);
+	text-decoration-color: var(--mst-accent);
+	text-shadow: 0px 0px 30px var(--mst-accent);
 }
 /* offtop */
 offtop {
@@ -360,7 +365,7 @@ offtop {
 	align-items: center;
 }
 .lg-container, footer {
-	background: var(--mst-container-bg);
+	background: var(--mst-prm-cont);
 }
 .lg-container, .header, .h-cont,
 .icon-links li, .asset, .asset-desc, .asset-preview,
@@ -385,13 +390,13 @@ input[type="submit"] {
 	box-shadow: 0px 5px 20px 1px var(--mst-bg);
 	z-index: 1;
 	justify-content: space-between;
-	background: var(--mst-container-bg);
+	background: var(--mst-prm-cont);
 }
 .header img {
 	margin-right: 5px;
 }
 .header img:hover, body#home #home-link {
-	box-shadow: 0 0 20px var(--mst-a-decor-color);
+	box-shadow: 0 0 20px var(--mst-a-decor);
 }
 .header a, button, .button,
 input[type="submit"] {
@@ -414,16 +419,16 @@ input[type="submit"] {
 body#feedback a#feedback-link,
 body#assets a#assets-link, .header a:hover,
 .button:hover, button:hover, input[type="submit"]:hover {
-	background: var(--mst-header-hover-link-bg);
-	/*box-shadow: 0px 0px 30px 2px var(--mst-header-hover-link-bg);*/
-	text-shadow: 0px 0px 30px var(--mst-a-color);
+	background: var(--mst-header-hover);
+	/*box-shadow: 0px 0px 30px 2px var(--mst-header-hover);*/
+	text-shadow: 0px 0px 30px var(--mst-accent);
 }
 .header a:active {
-	background: var(--mst-header-active-link-bg);
+	background: var(--mst-header-active);
 }
 /*.header a:active, .button:active, button:active {
-	/*box-shadow: 0px 0px 30px 2px var(--mst-header-active-link-bg);
-	text-shadow: 0px 0px 30px var(--mst-a-color);
+	/*box-shadow: 0px 0px 30px 2px var(--mst-header-active);
+	text-shadow: 0px 0px 30px var(--mst-accent);
 }*/
 /* is this actually used anywhere? i forgor */
 .no-decor {
@@ -475,7 +480,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 input[type="checkbox"], textarea, style[contenteditable],
 input[type="text"], input[type="radio"] {
-	background: var(--mst-input-bg);
+	background: var(--mst-input);
 }
 input[type="checkbox"]:before, input[type="radio"]:before {
 	content: '';
@@ -483,7 +488,7 @@ input[type="checkbox"]:before, input[type="radio"]:before {
 }
 input[type="checkbox"]:hover, input[type="radio"]:hover,
 textarea:focus, style[contenteditable]:focus-visible, input[type="text"]:focus {
-	border-color: var(--mst-input-border-color) !important;
+	border-color: var(--mst-input-border) !important;
 }
 input[type="checkbox"]:active, input[type="radio"]:active {
 	filter: brightness(1.5);
@@ -502,8 +507,8 @@ input[type="radio"]:checked::before {
 }
 /* what is this input doing alone from other regular inputs */
 input {
-	accent-color: var(--mst-input-bg);
-	background: var(--mst-input-border-color);
+	accent-color: var(--mst-input);
+	background: var(--mst-input-border);
 }
 .icon-links li, .asset-preview, .header.main-content {
 	align-items: center;
@@ -563,7 +568,7 @@ input {
 	}
 	.header {
 		backdrop-filter: none !important;
-		background: var(--mst-container-bg);
+		background: var(--mst-prm-cont);
 	}
 	dialog {
 		max-width: 95% !important;

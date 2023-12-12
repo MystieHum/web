@@ -31,6 +31,12 @@
 			image-rendering: pixelated;
 			image-rendering: crisp-edges;
 		}
+		.buttons:hover > img, .buttons:hover a {
+			opacity: 0.4;
+		}
+		.buttons a:hover, .buttons img:hover {
+			opacity: 1;
+		}
 	</style>
     <div style="display: none;"><a rel="me" class="none" href="https://wetdry.world/@mystie">Mastodon</a></div>
 	<nav class="header" style="margin: 10px auto 20px auto;">
@@ -150,6 +156,7 @@
 				<a href="https://firefox.com" target="_blank"><img width="88" height="31" loading="lazy" src="/static/images/firefox.png" alt="firefox button with text: 'Take back the web'"></a>
 				<a href="https://contrachrome.com" target="_blank"><img width="88" height="31" loading="lazy" src="/static/images/nochrome.png" alt="Anything but Chrome"></a>
 				<a href="http://88x31.nl" target="_blank"><img loading="lazy" width="88" height="31" src="/static/images/88x31.gif" alt="88x31"></a>
+				<img loading="lazy" width="88" height="31" src="/static/images/paws.png" alt="made with my own two paws">
 				<a href="https://fediverse.party/" target="_blank"><img loading="lazy" width="88" height="31" src="/static/images/fediverse.gif" alt="join the fediverse"></a>
 				<a href="https://spyware.neocities.org/articles/tiktok.html" target="_blank"><img loading="lazy" width="88" height="31" src="/static/images/tiktok.gif" alt="delete tiktok"></a>
 				<img loading="lazy" width="88" height="31" src="/static/images/invalid.png" alt="w3c button with poorly written 'bad html markup' text and a red cross">
@@ -184,12 +191,12 @@
 				<a href="#webrings"></a>
 			</div>
 			<div style="display: flex;">
-				<div style="border-radius: 3px; background: var(--mst-secondary-container-bg); width: fit-content; display: flex; align-items: center;">
+				<div style="border-radius: 3px; background: var(--mst-sec-cont); width: fit-content; display: flex; align-items: center;">
 					<a href="https://fediring.net/" style="margin: 0 10px">Fediring</a>
 					<a style="font-size: 20px;" class="button" href="https://fediring.net/previous?host=mystie.is-a.dev"><i class="ri-arrow-left-line"></i></a>
 					<a style="font-size: 20px;" class="button" href="https://fediring.net/next?host=mystie.is-a.dev"><i class="ri-arrow-right-line"></i></a>
 				</div>
-				<div style="margin-left: 10px; border-radius: 3px; background: var(--mst-secondary-container-bg); width: fit-content; display: flex; align-items: center;">
+				<div style="margin-left: 10px; border-radius: 3px; background: var(--mst-sec-cont); width: fit-content; display: flex; align-items: center;">
 					<a href="https://hotlinewebring.club/" style="margin: 0 10px">Hotline</a>
 					<a style="font-size: 20px;" class="button" href="https://hotlinewebring.club/mystie/previous"><i class="ri-arrow-left-line"></i></a>
 					<a style="font-size: 20px;" class="button" href="https://hotlinewebring.club/mystie/next"><i class="ri-arrow-right-line"></i></a>

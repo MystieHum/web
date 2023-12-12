@@ -89,7 +89,7 @@ footer {
 	bottom: 0;
 	position: sticky;
 	background: 0 0 !important;
-	color: var(--mst-muted-color);
+	color: var(--mst-muted);
 }
 footer p a, footer p a:hover {
 	color: inherit !important;
