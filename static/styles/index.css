@@ -229,8 +229,9 @@ body, dialog, textarea,
 style[contenteditable], input {
 	color: var(--mst-color);
 }
-p, a, button, li, textarea, style[contenteditable],
-summary, offtop, input[type="text"], label, input[type="submit"] {
+p, a, button, li, textarea,
+style[contenteditable], summary, offtop,
+input[type="text"], label, input[type="submit"] {
 	font-size: 14px;
 }
 /* buttons */
