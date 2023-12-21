@@ -184,8 +184,8 @@
 	--mst-a-decor: #0091ff30;
 	--mst-header-hover: #0091ff15;
 	--mst-header-active: #0091ff30;
-	--mst-input: #282828;
-	--mst-input-border: #555;
+	--mst-input: #1e2b48;
+	--mst-input-border: #42609f;
 	--mst-muted: #444;
 }
 :root.light {
