@@ -171,14 +171,14 @@
 /* vars */
 
 :root {
-	--mst-bg: #111;
+	--mst-bg: #000b25;
 	/* unused
 	--mst-warn-bg: #482500;
 	--mst-warn-btn-bg-hover: #552c00;
 	--mst-warn-btn-bg-active: #603200;
 	*/
-	--mst-prm-cont: #1a1a1a;
-	--mst-sec-cont: #222;
+	--mst-prm-cont: #172138;
+	--mst-sec-cont: #1e2b48;
 	--mst-color: #fff;
 	--mst-accent: #0091ff;
 	--mst-a-decor: #0091ff30;
@@ -269,7 +269,6 @@ dialog {
 	max-width: 60%;
 	border: none;
 	padding: 20px;
-	border-radius: 3px;
 	min-width: 600px;
 }
 :root.light dialog {
@@ -282,11 +281,11 @@ dialog::backdrop {
 /* no decoration for buttons and footer links */
 .button, .header a, footer a, footer a:hover {
 	text-decoration: none;
+	color: var(--mst-color) !important;
 }
 /* inputs */
 textarea, style[contenteditable], input[type="text"] {
 	border: 1px solid transparent;
-	border-radius: 3px;
 	padding: 10px;
 	margin: 5px 0;
 	width: 100%;
@@ -375,8 +374,9 @@ offtop {
 }
 .lg-container, .header a, .header, footer,
 .header img, .asset img, button, .button,
-input[type="submit"] {
-	border-radius: 3px;
+input[type="submit"], dialog, input[type="checkbox"],
+textarea, style[contenteditable], input[type="text"] {
+	border-radius: 4px;
 }
 .lg-container, footer {
 	padding: 20px;
@@ -423,6 +423,7 @@ body#assets a#assets-link, .header a:hover,
 	background: var(--mst-header-hover);
 	/*box-shadow: 0px 0px 30px 2px var(--mst-header-hover);*/
 	text-shadow: 0px 0px 30px var(--mst-accent);
+	color: var(--mst-accent) !important;
 }
 .header a:active {
 	background: var(--mst-header-active);
@@ -464,9 +465,6 @@ label code {
 	margin-left: 3px;
 }
 /* checkboxes and radios */
-input[type="checkbox"] {
-	border-radius: 3px;
-}
 input[type="radio"] {
 	border-radius: 100%;
 }
