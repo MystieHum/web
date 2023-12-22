@@ -172,11 +172,6 @@
 
 :root {
 	--mst-bg: #000b25;
-	/* unused
-	--mst-warn-bg: #482500;
-	--mst-warn-btn-bg-hover: #552c00;
-	--mst-warn-btn-bg-active: #603200;
-	*/
 	--mst-prm-cont: #172138;
 	--mst-sec-cont: #1e2b48;
 	--mst-color: #fff;
@@ -189,22 +184,17 @@
 	--mst-muted: #444;
 }
 :root.light {
-	--mst-bg: #eaeaea;
-	/* unused
-	--mst-warn-bg: #ffd9b3;
-	--mst-warn-btn-bg-hover: #ffcd9b;
-	--mst-warn-btn-bg-active: #f2be8a;
-	*/
-	--mst-prm-cont: #f2f2f2;
-	--mst-sec-cont: #eaeaea;
-	--mst-color: #222;
-	--mst-accent: #0070c6;
-	--mst-a-decor: #0070c630;
-	--mst-header-hover: #0070c615;
-	--mst-header-active: #0070c630;
-	--mst-input: #e3e3e3;
-	--mst-input-border: #bbb;
-	--mst-muted: #b9b9b9;
+	--mst-bg: #f8f8f8;
+	--mst-prm-cont: #fff;
+	--mst-sec-cont: #edf7ff;
+	--mst-color: #454547;
+	--mst-accent: #2a7ae2;
+	--mst-a-decor: #2a7ae230;
+	--mst-header-hover: #2a7ae215;
+	--mst-header-active: #2a7ae230;
+	--mst-input: #f2f7fd;
+	--mst-input-border: #b3d7ff;
+	--mst-muted: #9b9b9b;
 }
 /* base styling */
 ::selection {
@@ -231,7 +221,9 @@ style[contenteditable], input {
 }
 p, a, button, li, textarea,
 style[contenteditable], summary, offtop,
-input[type="text"], label, input[type="submit"] {
+input[type="text"], label, input[type="submit"],
+.h-cont h6 + a, input[type="radio"]:checked::before,
+marquee {
 	font-size: 14px;
 }
 /* buttons */
@@ -246,13 +238,6 @@ input[type="radio"], label, summary,
 input[type="submit"] {
 	cursor: pointer;
 }
-/* warning buttons are not used anywhere (at least for now) */
-/*.warn-btn:hover {
-	background: var(--mst-warn-btn-bg-hover) !important;
-}
-.warn-btn:active {
-	background: var(--mst-warn-btn-bg-active) !important;
-}*/
 button:hover, .button:hover, input[type="submit"]:hover {
 	background: var(--mst-header-hover);
 }
@@ -321,10 +306,6 @@ a:hover {
 offtop {
 	opacity: 0.5;
 }
-/*#warning {
-	display: none;
-	background: var(--mst-warn-bg);
-}*/
 /* header containers */
 .h-cont {
 	align-items: center;
@@ -355,9 +336,6 @@ offtop {
 }
 .h-cont h5 + a {
 	font-size: 16px;
-}
-.h-cont h6 + a {
-	font-size: 14px;
 }
 /* regular containers */
 .lg-container, .header, footer {
@@ -502,7 +480,6 @@ input[type="checkbox"]:checked::before {
 }
 input[type="radio"]:checked::before {
 	content: '\f3c1';
-	font-size: 14px;
 }
 /* what is this input doing alone from other regular inputs */
 input {
@@ -538,7 +515,7 @@ input {
 }
 /* i don't think i actually use .none */
 .none, .mobile {
-	display: none;
+	display: none !important;
 }
 /* for /assets.html */
 .asset-desc, .asset-preview {
@@ -577,7 +554,7 @@ input {
 		display: none;
 	}
 	.mobile {
-		display: block;
+		display: block !important;
 	}
 	.asset/*, #warning*/ {
 		flex-direction: column;

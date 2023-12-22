@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="/static/styles/remixicon/fonts/remixicon.min.css">
 	<meta name="theme-color" content="#7984ff">
 	<meta name="twitter:card" content="summary">
-	<meta name="og:title" content="MystieHum's website">
+	<meta name="og:title" content="mystieneko's website">
 	<meta name="og:type" content="website">
 	<meta name="og:url" content="https://mystie.is-a.dev/">
 	<meta name="og:image" content="/static/images/mst-avatar.webp">
-	<meta name="og:site_name" content="MystieHum's website">
+	<meta name="og:site_name" content="mystieneko's website">
 	<meta name="og:locale" content="en_US">
 	<meta name="og:description" content="A 14-year-old developer roaming around the Internet.">
-	<title>MystieHum</title>
+	<title>mystieneko</title>
 </head>
 <body id="home">
 	<style>
@@ -37,11 +37,34 @@
 		.buttons a:hover, .buttons img:hover {
 			opacity: 1;
 		}
+		.announcement {
+			border: 1px solid var(--mst-accent);
+			background: var(--mst-a-decor);
+			display: flex;
+			justify-content: space-between;
+		}
+		.announcement .content {
+			max-width: 70%;
+		}
+		.announcement .button {
+			padding: 10px 18px;
+		}
+		@media (max-width: 800px) {
+			.announcement {
+				display: block;
+			}
+			.announcement .call-to-action {
+				margin-top: 15px;
+			}
+			.announcement .content {
+				max-width: 100%;
+			}
+		}
 	</style>
     <div style="display: none;"><a rel="me" class="none" href="https://wetdry.world/@mystie">Mastodon</a></div>
 	<nav class="header" style="margin: 10px auto 20px auto;">
 		<div class="main-content" style="display: flex; align-items: center;">
-			<a href="/" data-logo><img id="home-link" src="/static/images/mst-avatar.webp" width="36" height="36" alt="MystieHum avatar"></a>
+			<a href="/" data-logo><img id="home-link" src="/static/images/mst-avatar.webp" width="36" height="36" alt="mystieneko avatar"></a>
 			<div class="nav-links" style="display: flex;">
 				<a href="/assets.html" id="assets-link">Assets</a>
 				<a href="/feedback.html" id="feedback-link">Feedback</a>
@@ -50,26 +73,23 @@
 		</div>
 		<a href="javascript:toggleTheme()"><i class="ri-palette-line"></i> Theme</a>
 	</nav>
-	<!-- actually, let's not do that -->
-	<!--div class="lg-container" id="warning" style="margin: 10px auto; justify-content: space-between;">
-		<div>
-			<h2 id="warn-h2">Google & Chromium are adding DRM to the open web.</h2>
-			<small>(Google's Web Environment Integrity)</small>
+	<div class="lg-container announcement" style="margin: 10px auto;">
+		<div class="content">
+			<h3>New experimental layout is available!</h3>
+			<p>I'm currently testing new sidebar layout, that will be the default when I finish it. I would love to hear your feedback in <a href="https://github.com/mystieneko/comments/discussions/3" target="_blank">GitHub Discussions</a>, or <a href="mailto:mystie@skiff.com">by email</a>!</p>
+			<p class="mobile">(this layout will be desktop-only, mobile layout will remain unchanged)</p>
 		</div>
-		<div>
-			<a target="_blank" class="button warn-btn" href="https://www.mozilla.org/en-US/firefox/new/" style="display: flex;align-items: center;">
-				<img src="/static/images/ff_logo.svg" width="30" height="30" style="display: inline-block;">
-				<p>&nbsp;Switch to Firefox now</p>
-			</a>
+		<div class="call-to-action">
+			<a href="/testing_zone/sidebar.html" class="button" role="button">Test it out!</a>
 		</div>
-	</div-->
+	</div>
 	<div class="lg-container" style="margin: 10px auto;">
 		<div class="content">
 			<div class="h-cont">
 				<h2 id="about-me">Hello there!</h2>
 				<a href="#about-me"></a>
 			</div>
-			<p>I'm MystieHum, a 14-year-old developer that likes Glitch Hop music, developing websites and flashing devices.<br>
+			<p>I'm mystieneko, a 14-year-old developer that likes Glitch Hop music, developing websites and flashing devices.<br>
 				Favorite track: <a href='https://youtu.be/watch?v=11EHCcMqIgw' target='_blank'>DVRST - Motion</a><br>
 				Playlist on YouTube Music: <a href='https://music.youtube.com/playlist?list=PLglFzT7e0p-SCFG3JNdctW-7_Z8k23qrh' target='_blank'>MusicdasH</a><br>
 				Main device: <a href='https://www.gsmarena.com/xiaomi_redmi_6a-9217.php' target='_blank'>Xiaomi Redmi 6A</a><br>
@@ -91,7 +111,7 @@
 			<ul style="list-style-type: none;">
 				<li><a href="/p/foxhome">FoxHome</a> - a start page for foxes™</li>
 				<li><a href="https://realvanyek.eu.org/qoritsuki" target="_blank">Qoritsuki</a> - (slightly abandoned) Discord bot</li>
-				<li><a href="https://github.com/MystieHum/mystie.eu.org" target="_blank">mystie.eu.org</a> - previous (bloated) website</li>
+				<li><a href="https://github.com/mystieneko/mystie.eu.org" target="_blank">mystie.eu.org</a> - previous (bloated) website</li>
 				<li><a href="https://realvanyek.eu.org/tvhome" target="_blank">TVHome</a> - basically a start page for Smart TVs <offtop>(english is not yet supported)</offtop></li>
 			</ul>
 		</div>
@@ -118,16 +138,16 @@
 				</li>
 				<li>
 					<img loading="lazy" class="light-invert" src="/static/images/gh.svg" width="16" title="GitHub" alt="GitHub logo">
-					<a href="https://github.com/MystieHum">MystieHum</a>
+					<a href="https://github.com/mystieneko">mystieneko</a>
 				</li>
 				<h4>Won't respond/inactive</h4>
 				<li>
 					<img loading="lazy" src="/static/images/yt.webp" width="16" title="YouTube" alt="YouTube logo">
-					<a href="https://www.youtube.com/@MystieHum">MystieHum</a>
+					<a href="https://www.youtube.com/@mystieneko">mystieneko</a>
 				</li>
 				<li>
 					<img loading="lazy" src="/static/images/tg.svg" width="16" title="Telegram" alt="Telegram logo">
-					<a href="https://telegram.dog/MystieHum">MystieHum</a>
+					<a href="https://telegram.dog/mystieneko">mystieneko</a>
 				</li>
 				<li>
 					<img loading="lazy" class="dark-invert" src="/static/images/matrix.svg" width="16" title="Matrix" alt="Matrix logo">
@@ -177,6 +197,10 @@
 				<a href="https://www.centos.org/" target="_blank"><img loading="lazy" width="88" height="31" src="/static/images/centos.png" alt="powered by centos"></a>
 				<img loading="lazy" width="88" height="31" src="/static/images/gnu-linux.gif" alt="made on gnu/linux">
 				<a href="https://ublockorigin.com" target="_blank"><img loading="lazy" width="88" height="31" src="/static/images/ublock.png" alt="ublock origin now"></a>
+				<img loading="lazy" width="88" height="31" src="/static/images/eevee.gif" alt="i love eevee">
+				<a href="https://mystie.is-a.dev"><img loading="lazy" width="88" height="31" src="/static/images/mystieneko_88x31.png" alt="mystieneko" title="that's me!"></a>
+				<img loading="lazy" width="88" height="31" src="/static/images/facebook.png" alt="fuck facebook">
+				<img loading="lazy" width="88" height="31" src="/static/images/houl.png" alt="houl">
 				<a href="https://rodionmern.github.io" target="_blank"><img loading="lazy" width="88" height="31" src="/static/images/rosburff-rodsa.png" alt="rosburff button"></a>
 				<img loading="lazy" width="88" height="31" src="/static/images/nft.gif" alt="nft: no fucking thanks">
 				<a href="https://jellyfin.org/" target="_blank"><img loading="lazy" width="88" height="31" src="/static/images/jellyfin.gif" alt="jellyfin"></a>
@@ -205,15 +229,9 @@
 		</div>
 	</div>
 	<footer style="margin: 10px auto;">
-		<p>Made by <a href="https://wetdry.world/@mystie">MystieHum</a> in 2023, open-source on <a href="https://github.com/MystieHum/web">GitHub</a>, hosted on <a href="https://heliohost.org">HelioHost</a>. Fonts used: <a href="https://fonts.google.com/specimen/Inter">Inter</a>, <a href="https://fonts.google.com/specimen/DM+Sans">DM Sans</a></p>
+		<p>Made by <a href="https://wetdry.world/@mystie">mystieneko</a> in 2023, open-source on <a href="https://github.com/mystieneko/web">GitHub</a>, hosted on <a href="https://heliohost.org">HelioHost</a>. Fonts used: <a href="https://fonts.google.com/specimen/Inter">Inter</a>, <a href="https://fonts.google.com/specimen/DM+Sans">DM Sans</a></p>
 		<p>You are currently on the <b class="dark-only">dark</b><b class="light-only">light</b> side <a href="javascript:toggleTheme()">(switch?)</a></p>
 	</footer>
 	<script src="/static/scripts/theme.min.js"></script>
-	<!-- actually, let's not do that -->
-	<!--script>
-	    if (navigator.userAgent.includes("Chrom")) {
-	    	document.getElementById("warning").style.display = "flex";
-	    }
-	</script-->
 </body>
 </html>
